@@ -1,0 +1,49 @@
+1. 
+function pseudo($input){
+    for($x=1;$x<=$input;$x++){
+        $val = 0;
+        for($z=1;$z<=$x;$z++){
+            if($x % $z == 0)
+                $val++;
+        }
+        if($val == 2)
+            echo $x.'<br>';
+    }
+}
+
+pseudo(50);
+
+2.
+function fibonacci($input)
+{
+    
+  $prev_number=0;
+  $current_number=1;
+  
+  $result = $prev_number.' '.$current_number;
+  for ($i=0; $i<$input-2; $i++)
+  {
+    $output = $current_number + $prev_number;
+    $result = $result.' '.$output;
+  
+    $prev_number = $current_number;
+    $current_number = $output;
+  }
+  return $result;
+}
+  
+echo fibonacci(8).'<br>';
+
+3.
+function detail($input){
+    $var = strval($input);
+    for($x=0; $x<strlen($var); $x++){
+        $temp = $var[$x];
+        for($z=0; $z<(strlen($var)-($x+1)); $z++)
+            $temp = $temp.'0';
+    
+        echo $temp.'<br>';
+    }
+}
+
+detail(1345679);
